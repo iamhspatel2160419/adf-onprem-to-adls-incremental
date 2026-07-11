@@ -1,0 +1,39 @@
+{
+	"name": "DS_SQLTable_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLTable_PARQUET",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"Table_Name": {
+					"value": "@dataset().Table_Name",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"Table_Name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(\n    dataset().Table_Name,\n    '_',\n    formatDateTime(utcNow(),'yyyyMMddHHmmss'),\n    '.parquet'\n)",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat(\n    dataset().Table_Name,\n    '/',\n    formatDateTime(utcNow(),'yyyy/MM/dd')\n)",
+					"type": "Expression"
+				},
+				"fileSystem": "raw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

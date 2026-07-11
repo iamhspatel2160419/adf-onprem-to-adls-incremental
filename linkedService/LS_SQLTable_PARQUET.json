@@ -1,0 +1,17 @@
+{
+	"name": "LS_SQLTable_PARQUET",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"Table_Name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stonpremclouddev.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQERFRkY4NTIzLTk1RjgtNDkzNi04NEZGLTgxRDU1NTcxMjZBRl9jYzYzYTFmMi1hNzVhLTQwMDMtODFjZS03NWU1MmYxMTY2YjQiDQp9"
+		}
+	}
+}
